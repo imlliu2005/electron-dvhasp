@@ -6,7 +6,7 @@
   "private": true,
   "author": "CuraCloud <curacloud@keyayun.com>",
   "scripts": {
-    "start": "node --experimental-worker scripts/start.js",
+    "start": "node scripts/start.js",
     "build": "electron-rebuild && node scripts/build.js",
     "electron": "NODE_ENV=development electron .",
     "packer": "yarn build && rm -rf dist && electron-builder",
