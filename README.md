@@ -1,4 +1,4 @@
-# linux 上的图标问题
+## linux 上的图标问题
 
 两种解决办法
 
@@ -12,6 +12,10 @@ sudo apt-get install -f
 
 sudo apt-get -f install libappindicator1 libindicator7
 
-# findhasp 插件需要的编译需要和electron的node版本一致
+## findhasp 插件需要的编译需要和electron的node版本一致
 1. 解决办法 electeon-rebuild 参见package.json
+
+## 安装脚本
+install.sh
+uninstall.sh
 
