@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=冠状动脉生理功能评估软件
+GenericName=Unknown
+Comment=冠状动脉生理功能评估软件
+Exec=/usr/local/bin/deepvessel-ffr
+Terminal=false
+MimeType=text/plain;
+Icon=deepvessel-ffr
+Categories=Medical;
+StartupNotify=true

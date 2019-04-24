@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=卸载
+GenericName=Unknown
+Comment=卸载
+Exec=bash -c '`dirname "%k"`/package/uninstall.sh'
+Terminal=true
+MimeType=text/plain;
+Icon=software-properties
+Categories=
+StartupNotify=true

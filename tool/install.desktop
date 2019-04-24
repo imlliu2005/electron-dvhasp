@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=安装
+GenericName=Unknown
+Comment=安装
+Exec=bash -c '`dirname "%k"`/package/install.sh'
+Terminal=true
+MimeType=text/plain;
+Icon=software-properties
+Categories=
+StartupNotify=true
