@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "electron-rebuild && node scripts/build.js",
-    "electron": "NODE_ENV=development electron .",
+    "electron": "NODE_ENV=development electron-rebuild && electron .",
     "packer": "yarn build && rm -rf dist && electron-builder",
     "test": "node scripts/test.js"
   },
@@ -109,7 +109,6 @@
     "electron-builder": "^20.39.0",
     "electron": "^4.1.4",
     "electron-rebuild": "^1.8.4"
-
   },
   "eslintConfig": {
     "extends": "react-app"
