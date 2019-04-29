@@ -2,8 +2,8 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow, globalShortcut, dialog } = require('electron')
 const path = require('path'); 
+const addon = require('@cc/findhasp');
 
-// const {fork} = require('child_process');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -19,18 +19,6 @@ function createWindow () {
     mainWindow.loadURL(`file://${path.join(app.getAppPath(), 'build/index.html')}`);
   }
 
-  // const forked = fork('src/child.js');
-  // forked.on('message', (msg) => {
-  //     console.log('messsgae from child', msg);
-  //     dialog.showMessageBox({
-  //       type: 'info',
-  //       message: '查找加密锁',
-  //       detail: msg.hasp ? "has" : 'no',
-  //       buttons: ['好的']
-  //     })
-  // });
-
-// forked.send({hello: 'world'});
   // Open the DevTools.
    mainWindow.webContents.openDevTools()
 
@@ -64,6 +52,15 @@ if (!gotTheLock) {
   // Create myWindow, load the rest of the app, etc...
   app.on('ready', () => {
     createWindow();
+    setInterval(() => {
+      const hasp = addon.findHasp();
+      dialog.showMessageBox({
+        type: 'info',
+        message: '查找加密锁',
+        detail: hasp ? "has" : 'no',
+        buttons: ['好的']
+      })
+  }, 3000);
   })
 }
 
