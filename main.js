@@ -54,12 +54,16 @@ if (!gotTheLock) {
     createWindow();
     setInterval(() => {
       const hasp = addon.findHasp();
-      dialog.showMessageBox({
-        type: 'info',
-        message: '查找加密锁',
-        detail: hasp ? "has" : 'no',
-        buttons: ['好的']
-      })
+      if (hasp) {
+
+      } else {
+        dialog.showMessageBox({
+          type: 'info',
+          message: '查找加密锁',
+          detail: 'no',
+          buttons: ['好的']
+        })
+      }
   }, 3000);
   })
 }
@@ -72,9 +76,7 @@ app.on('will-quit', function () {
 app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  // if (process.platform !== 'darwin') {
-    app.quit()
-  // }
+  app.quit()
 })
 
 app.on('activate', function () {
