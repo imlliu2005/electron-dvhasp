@@ -62,8 +62,10 @@ if (!gotTheLock) {
           message: '查找加密锁',
           detail: 'no',
           buttons: ['好的']
-        })
+        });
+        app.quit();
       }
+     
   }, 3000);
   })
 }
