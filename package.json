@@ -7,8 +7,8 @@
   "author": "CuraCloud <curacloud@keyayun.com>",
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "electron-rebuild && node scripts/build.js",
-    "electron": "NODE_ENV=development electron-rebuild && electron .",
+    "build": "node scripts/build.js",
+    "electron": "NODE_ENV=development electron .",
     "packer": "yarn build && rm -rf dist && electron-builder",
     "test": "node scripts/test.js"
   },
@@ -52,7 +52,6 @@
   },
   "dependencies": {
     "@babel/core": "7.2.2",
-    "@cc/findhasp": "^0.1.0",
     "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -73,6 +72,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.12.4",
+    "execa": "^1.0.0",
     "file-loader": "2.0.0",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
