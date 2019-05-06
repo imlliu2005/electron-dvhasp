@@ -18,26 +18,26 @@ function createWindow () {
     mainWindow.loadURL(`file://${path.join(app.getAppPath(), 'build/index.html')}`);
   }
   
-  const child = require('child_process')
-.spawn('pkexec', ['dvhasp']);
+  const child = require('child_process').spawn('pkexec', ['dvhasp']);
 
-child.stdout.on('data', function (data) {
-    if(data.indexOf("nohasp") !== -1){
-      dialog.showMessageBox({
-        type: 'info',
-        message: '加密锁检测',
-        detail: '未检测到加密锁,请插入加密锁!',
-        buttons: ['好的'] 
-      });
-    }
-    console.log('stdout: ' + data);
-});
+  child.stdout.on('data', function (data) {
+      if(data.indexOf("nohasp") !== -1){
+        dialog.showMessageBox({
+          type: 'info',
+          message: '加密锁检测',
+          detail: '未检测到加密锁,请插入加密锁!',
+          buttons: ['好的'] 
+        });
+      }
+      console.log('stdout: ' + data);
+  });
 
-child.stderr.on('data', function (data) {
-    console.log('stderr: ' + data);
-});
+  child.stderr.on('data', function (data) {
+      console.log('stderr: ' + data);
+      app.quit();
+  });
 
-child.stdin.write('1\n'); // Attention!
+  child.stdin.write('1\n'); // Attention!
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
 

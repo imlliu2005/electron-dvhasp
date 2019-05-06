@@ -23,7 +23,7 @@
       "target": [
         "dmg"
       ],
-      "icon": "build/icon.icns"
+      "icon": "build/ffr.icns"
     },
     "linux": {
       "category": "Utility",
